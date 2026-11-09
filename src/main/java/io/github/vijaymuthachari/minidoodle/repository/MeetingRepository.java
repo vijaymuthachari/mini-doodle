@@ -22,7 +22,7 @@ public interface MeetingRepository extends JpaRepository<Meeting, UUID> {
             """)
     Optional<Meeting> findDetailedById(@Param("id") UUID id);
 
-    Optional<Meeting> findBySlotId(UUID slotId);
+    boolean existsBySlotId(UUID slotId);
 
     /**
      * Time ranges of meetings in [from, to) that the user is invited to as a participant.
